@@ -21,7 +21,7 @@ Or:
 [1, 4, 9, 16, 25]
 ```
 
-It's that same as writing:
+It's the same as writing:
 
 ```python
 >>> squares = []
@@ -107,7 +107,7 @@ It's the same as writing:
 ```
 
 We can also use if clauses with multiple for clauses. For instance, what are
-the solutions to the equation $x^2 + y = 100$ for $x$ and $y$ integers between 1
+the solutions to the equation $x^2 + y = 50$ for $x$ and $y$ integers between 1
 and 100? We can write:
 
 ```python
@@ -209,9 +209,9 @@ numbers 0 to 7 in binary:
 111 = 7
 ```
 
-Thinking of list comprehensions as Cartesian products is a nice connection to
-mathematics, It lets us use ideas from math to help reason about our code (and
-vice versa).
+Thinking of list comprehensions as Cartesian products gives us a nice connection
+to mathematics. It lets us use ideas from math to help reason about our code
+(and vice versa).
 
 **Example**. See [abc_puzzle.py](abc_puzzle.py) for a more detailed example.
 
@@ -251,9 +251,9 @@ high_scores = [(n, score)
               ]
 ```
 
-The first time `get_score` is called its result is saved in the variable `score`
-using `:=`. Then `score` can be used in other parts of the comprehension without
-calling `get_score` again.
+The first time `get_score` is called, its result is saved in the variable
+`score` using `:=`. Then `score` can be used in other parts of the comprehension
+without calling `get_score` again.
 
 In some situations the walrus operator can make code more concise and efficient,
 so be on the lookout for situations where it can be used.
@@ -418,7 +418,7 @@ algebra). For example if you have the matrix:
 5 6
 ```
 
-It's transpose is:
+Its transpose is:
 
 ```
 1 3 5
@@ -442,7 +442,8 @@ And the transpose would be:
  [2, 4, 6]]  # column 1
 ```
 
-Can you how `zip` and the `*` unpacking operator to transpose the matrix?
+Can you see how to use `zip` and the `*` unpacking operator to transpose the
+matrix?
 
 Using `zip` and the `*` operator we can transpose a matrix like this:
 
@@ -464,7 +465,7 @@ any number of lists). `zip([1, 2], [3, 4], [5, 6])` yields these values:
 (2, 4, 6)
 ```
 
-`(1, 3, 5)` holds the firsts elements of each list, and `(2, 4, 6)` holds the
+`(1, 3, 5)` holds the first elements of each list, and `(2, 4, 6)` holds the
 second elements. After converting the tuples to lists, you get the transpose of
 the matrix!
 
@@ -596,7 +597,7 @@ class Letters:
             raise StopIteration
 ```
 
-The:
+Then:
 
 ```python
 letters = Letters("cat")
@@ -610,7 +611,7 @@ It still crashes, but now we know that it will raise `StopIteration`.
 
 ### Making Iterators with `__iter__` and `__next__`
 
-Python has built-in support for iterators called the **iterator protocol**. An
+Python has built-in support for iterators called the **iterator protocol**. A
 Python object is an iterator if it conforms to the iterator protocol. That means
 it must have these two methods:
 
@@ -626,7 +627,7 @@ methods.
 The idea is that calling `__iter__()` gets you an iterator object that is
 guaranteed to have a `__next__` method. 
 
-So lets update `Letters` to make it an official Python iterator:
+So let's update `Letters` to make it an official Python iterator:
 
 ```python
 class Letters:
@@ -645,7 +646,7 @@ class Letters:
             raise StopIteration
 ```
 
-We can still use this as before, using the  `__next__` method:
+We can still use this as before, using the `__next__` method:
 
 ```python
 letters = Letters("cat")
@@ -823,7 +824,7 @@ for p in range(5):
 # 11
 ```
 
-To implement it, we first write couple of helper functions for finding primes:
+To implement it, we first write a couple of helper functions for finding primes:
 
 ```python
 def is_prime(n):
@@ -864,7 +865,7 @@ class Primes:
 ```
 
 The source code for `Primes` is relatively simple thanks to our helper
-functions. Calling`__next__` calls `next_prime`, which could do a lot of work:
+functions. Calling `__next__` calls `next_prime`, which could do a lot of work:
 for large values of `n`, it could take a long time to find the next prime
 number.
 
@@ -1164,7 +1165,7 @@ do_laundry()
 ```
 
 This works, but it's messy, and the timing code is not reusable. So instead,
-lets write a function that can take `do_laundry` as input and return a new
+let's write a function that can take `do_laundry` as input and return a new
 function that times it:
 
 ```python
@@ -1207,7 +1208,7 @@ timed_do_laundry()
 # Time taken: 1.005068063735962 seconds
 ```
 
-`@make_timed_function` is a **decorator**. It does the same thing
+`@make_timed_function` is a **decorator**. It does the same thing as
 `timed_do_laundry = make_timed_function(do_laundry)`, but keeping the same name
 `do_laundry`:
 
@@ -1400,7 +1401,7 @@ In this code, the file is opened when the `with` statement is entered, and when
 the loop exits, the file is closed. The context manager automatically takes care
 of the opening and closing of the file.
 
-Lets write out own context manager to show the basic idea. Consider the `Greet`
+Let's write out own context manager to show the basic idea. Consider the `Greet`
 class:
 
 ```python
@@ -1430,7 +1431,7 @@ How are you?
 Goodbye, Alice!
 ```
 
-You can replaced `__enter__` and `__exit__` with whatever you want to do. For
+You can replace `__enter__` and `__exit__` with whatever you want to do. For
 example, we could use it to start and stop a timer:
 
 ```python
@@ -1545,7 +1546,7 @@ def print_point(point):
 print_point((0, 0)) # Origin
 print_point((0, 3)) # On the y-axis at 3
 print_point((6, 0)) # On the x-axis at 6
-print_point((2, 5)) # X=1, Y=1
+print_point((2, 5)) # X=2, Y=5
 print_point([6, 4]) # X=6, Y=4
 print_point((6, 4, 2)) # Not a point
 ```
@@ -1600,10 +1601,10 @@ print(get_min([3, 4, 5])) # 3
 
 A few things to note:
 - It's a recursive function.
-- It's clearly states that the empty list, `[]`, raises an error.
+- Its clearly states that the empty list, `[]`, raises an error.
 - It's also clear that the min of a list with a single element is just the
   element itself.
-- The third case is binds the first element of the list to `first`, and the rest
+- The third case binds the first element of the list to `first`, and the rest
   of the list to `rest`. Then it finds the min of the rest of the list and
   compares it to the first element.
 

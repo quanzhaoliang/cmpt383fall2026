@@ -1,11 +1,14 @@
 # abc_puzzle_sol.py
 
 #
-# Find all 3-digit numbers ABC such that 
-# - A, B, and C are all different 
+# Find all 3-digit numbers ABC such that
+#
+# - A, B, and C are all different digits (and A is not 0)
 # - ABC + CBA is a number whose digits are all the same
 # - A and B are not 0 (to avoid leading zeros)
 # - ABC < CBA
+#
+# For example: 123 + 321 = 444
 #
 
 # Solution 1: use for-loops (and no comprehensions)

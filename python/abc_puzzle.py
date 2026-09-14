@@ -8,9 +8,23 @@
 # - ABC < CBA
 #
 
-def demo1():
+# Solution 1: use for-loops (and no comprehensions)
+def sol_for_loops():
     solutions = []
     # ...
 
     print(solutions)
 
+# Solution 2: use a single list comprehension (and no loops, no walrus operator)
+def sol_list_comprehension():
+    solutions = []
+    # ...
+
+    print(solutions)
+
+# Solution 3: use a single list comprehension and the walrus operator
+def sol_walrus():
+    solutions = []
+    # ...
+
+    print(solutions)

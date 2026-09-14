@@ -8,7 +8,7 @@
 # - ABC < CBA
 #
 
-def demo1():
+def sol_for_loops():
     num_tests = 0
     num_solutions = 0
     for a in range(1, 10):
@@ -30,7 +30,7 @@ def demo1():
     print(f"Number of solutions: {num_solutions}")
 
 
-def demo2():
+def sol_comprehension():
     solutions = [(a, b, c) for a in range(1, 10) 
                            for b in range(10)
                            if a != b
@@ -45,7 +45,7 @@ def demo2():
 
 # Uses the walrus operator to define the variables abc and cba, making the code
 # more concise and (hopefully) more efficient.
-def demo3():
+def sol_walrus():
     solutions = [(a, b, c) for a in range(1, 10) 
                            for b in range(10)
                            if a != b
@@ -58,6 +58,6 @@ def demo3():
     print(solutions)
     print(f"Number of solutions: {len(solutions)}")
 
-demo1()
-demo2()
-demo3()
+sol_for_loops()
+sol_comprehension()
+sol_walrus()

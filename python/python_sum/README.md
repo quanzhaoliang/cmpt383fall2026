@@ -2,7 +2,7 @@ Among Python programmers, there is a rumor that list comprehensions are faster
 than for-loops, while-loops, or recursion. Let's test this hypothesis by
 answering this question:
 
-   What is the sum of all the numbers in the file [numbers.txt](numbers.txt) ([zip])
+   What is the sum of all the numbers in the file [numbers.txt](numbers.txt) ([zip](numbers.txt.zip))
    that are greater than, or equal to 1, and less than, or equal to 100?
 
 Please work with your TA group, and answer this questions in the following ways:
@@ -17,7 +17,7 @@ Please work with your TA group, and answer this questions in the following ways:
 through the problem-solving process and understand the different implementation
 methods.)
 
-For each implementation, using the same [numbers.txt](numbers.txt) file as the
+For each implementation, using the same [numbers.txt](numbers.txt) ([zip](numbers.txt.zip)) file as the
 input, measure the total time it takes to read the file and print the final sum. Be wary of a couple of things:
 
 - The different implementations should do the same work. If one implementation

@@ -260,6 +260,10 @@ so be on the lookout for situations where it can be used.
 
 [high_scores.py](high_scores.py) contains the complete code example.
 
+### Practice Exercise
+
+Please do this [practice exercise](python_sum/).
+
 ### Using zip
 
 A sometimes useful function is `zip`, which takes two (or more) lists and gives

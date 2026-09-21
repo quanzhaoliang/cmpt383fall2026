@@ -1383,7 +1383,9 @@ print(factorial(5))
 [This video](https://www.youtube.com/watch?v=3tyaO-OE0K0) gives a similar
 explanation of decorators.
 
-**Example** [Do the following practice activities](python_practice.md).
+**Practice Activity** 
+
+[Do the following practice activities](python_practice.md).
 
 ## Context Managers
 

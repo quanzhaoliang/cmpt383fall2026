@@ -6,7 +6,7 @@
 
 **List comprehensions** are a concise and efficient way to create lists. They
 are based on mathematical set notation. For example, the set of the squares of
-the numbers 1 to 5 is $\\{x^2 : x \in \\{1, 2, 3, 4, 5 \\} \\}$. In Python we
+the numbers 1 to 5 is ${x^2 : x \in {1, 2, 3, 4, 5 } }$. In Python we
 can write:
 
 ```python
@@ -76,6 +76,8 @@ Or formatted a little differently:
 ['Mary', 'Dean']
 ```
 
+
+
 ### Multiple clauses
 
 If a comprehension has more than one `for` clause they act like nested `for`
@@ -139,7 +141,7 @@ long to run.
 
 If $A$ and $B$ are two sets, then their **Cartesian product $A \times B$** is
 the set of all pairs $(a, b)$ where $a \in A$ and $b \in B$, i.e. $A \times B =
-\\{ (a, b) : a \in A, b \in B \\}$. In Python:
+{ (a, b) : a \in A, b \in B }$. In Python:
 
 ```python
 >>> [(a, b) for a in A 
@@ -152,8 +154,8 @@ comprehension makes $n^2$ elements, which is a quadratic run time.
 
 Generalizing this, the Cartesian product of the sets $A_1, A_2, \ldots, A_n$ is
 the set of all $n$-tuples $(a_1, a_2, \ldots, a_n)$ where $a_i \in A_i$ for $i =
-1, 2, \ldots, n$, i.e. $A_1 \times A_2 \times \cdots \times A_n = \\{ (a_1, a_2,
-\ldots, a_n) : a_i \in A_i \\}$ for $i = 1, 2, \ldots, n$. 
+1, 2, \ldots, n$, i.e. $A_1 \times A_2 \times \cdots \times A_n = { (a_1, a_2,
+\ldots, a_n) : a_i \in A_i }$ for $i = 1, 2, \ldots, n$. 
 
 In Python:
 
@@ -341,6 +343,8 @@ passing = [name for name, score in zip(names, scores)
 print(passing) # ['Alice', 'Charlie']
 ```
 
+
+
 #### Pairs of Adjacent Elements
 
 `zip` can help you get pairs of adjacent elements in a sequence. For example:
@@ -411,6 +415,8 @@ same thing more concisely:
 print(f(*values)) # 6
 ```
 
+
+
 #### Transposing a Matrix
 
 Finally, consider **transposing** a matrix (a fundamental operation in linear
@@ -476,6 +482,8 @@ See [zip_demo_sol.py](zip_demo_sol.py) for a more complete code example.
 
 ## Generators and Co-routines
 
+
+
 ### Enumerate
 
 It's common in Python to want both the indices and values of the elements of a
@@ -521,11 +529,11 @@ def get_min(lst):
 print(get_min([3, 2, 4, 1, 5])) # (1, 3)
 ```
 
+
+
 ### Iterators
 
-In general, an **iterator** is an object that returns values. In practice, it is
-often used to give sequential access to the objects in a collection (like a
-list, or a tree).
+In general, an **iterator** is an object that returns other objects. In practice, it is often used to give sequential access to the objects in a collection (like a list, or a tree).
 
 Let's build our own iterator as an example (we'll see shortly how to make it an
 official Python iterator):
@@ -620,7 +628,6 @@ it must have these two methods:
 `StopIteration` if there are no more values. Python calls it `__next__` instead
 of `next` since it is a Python convention to use double underscores for special
 methods.
-
 - `__iter__()` returns the iterator object itself. This usually just returns
 `self`, i.e. the object itself. But container objects, such as a list, have
 `__iter__` so that you can get an iterator object for the container.
@@ -759,6 +766,8 @@ for i, v in My_enumerate(["a", "b", "c"]):
 # 2 c
 ```
 
+
+
 ### Our Own reverse
 
 Python has a built-in iterator called `reversed` that iterates over a sequence
@@ -807,6 +816,8 @@ for i in My_reversed([1, 2, 3, 4]):
 # 2
 # 1
 ```
+
+
 
 ### An Iterator for Primes
 
@@ -1053,7 +1064,9 @@ are generally simpler and more readable.
 
 ## Closures and decorators
 
-### Closures
+
+
+### Closuresl
 
 A **closure** is an object that acts like a function, but also has an
 environment of variables that persist after the function returns. When you write
@@ -1132,6 +1145,8 @@ set_n(10)
 print(get_n()) # 10
 ```
 
+
+
 ### Basic Decorators
 
 A common programming pattern that closures help with is wrapping a function
@@ -1203,7 +1218,7 @@ def do_laundry():
     time.sleep(1)
     print("Laundry done")
 
-timed_do_laundry()
+do_laundry()
 # Doing laundry ... 
 # Laundry done
 # Time taken: 1.005068063735962 seconds
@@ -1476,13 +1491,13 @@ The parameters to `__exit__` are used for handling exceptions that might occur
 in the block of code:
 
 - `exc_type`: the type of the exception that occurred, or `None` if no exception
-  occurred
-
+occurred
 - `exc_val`: the value of the exception that occurred, or `None` if no exception
-  occurred
-
+occurred
 - `exc_tb`: the traceback of the exception that occurred, or `None` if no
-  exception occurred
+exception occurred
+
+
 
 ## The Match Statement
 
@@ -1605,13 +1620,14 @@ print(get_min([3, 4, 5])) # 3
 ```
 
 A few things to note:
+
 - It's a recursive function.
 - Its clearly states that the empty list, `[]`, raises an error.
 - It's also clear that the min of a list with a single element is just the
-  element itself.
+element itself.
 - The third case binds the first element of the list to `first`, and the rest
-  of the list to `rest`. Then it finds the min of the rest of the list and
-  compares it to the first element.
+of the list to `rest`. Then it finds the min of the rest of the list and
+compares it to the first element.
 
 Python's `match` doesn't always work as you might like. For example:
 
@@ -1654,3 +1670,4 @@ print(good_contains(3, [])) # False
 print(good_contains(3, [4])) # False
 print(good_contains(3, [3])) # True
 ```
+

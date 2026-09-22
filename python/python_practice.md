@@ -21,3 +21,9 @@ The next question is not about the Fibonacci sequence:
    iterator/generator ones!), since they can time to run for N around 30-40. Be
    careful: we only want to see the time of the first function call, not every
    function call.
+
+
+
+range()/string is not a iterator, since it only have __iter__ but without __next__. It is iteratable but not iterator
+How they can become iterator is like:
+>> gen = "cat".__iter__() #gen now can call the __next__() function

@@ -33,7 +33,11 @@
 ;; integers L.
 ;;
 (define (count-evens L)
-  'todo)
+  (cond [(empty? L) 0]
+        [(even? (first L))
+         (+ 1 (count-evens (rest L)))]
+        [else
+         (count-evens (rest L))]))
 
 ;;
 ;; Problem 2

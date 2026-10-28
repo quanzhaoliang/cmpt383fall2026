@@ -45,8 +45,13 @@
 ;; (max-of L) returns the largest number in the list L. If L is empty,
 ;; it raises an error.
 ;;
+(define (max-helper best L)
+  (cond [(empty? L) best]
+        [(< best (first L)) (max-helper (first L) (rest L))]
+        [else (max-helper best (rest L))]
+        ))
 (define (max-of L)
-  'todo)
+  (max-helper (first L) (rest L)))
 
 ;;
 ;; Problem 3
@@ -56,8 +61,10 @@
 ;; other, the extra elements are ignored.
 ;;
 (define (zip A B)
-  'todo)
-
+  (cond [(empty? A) '()]
+        [(empty? B) '()]
+        [else (cons (list (first A) (first B))
+                    (zip (rest A) (rest B)))]))
 ;;
 ;; Problem 4
 ;;
@@ -66,7 +73,12 @@
 ;; with one element are sorted.
 ;;
 (define (sorted? L)
-  'todo)
+  (cond [(empty? L) #t]
+        [(empty? (rest L)) #t]
+        [(< (first (rest L)) (first L)) #f]
+        [else (sorted? (rest L))]
+        )
+  )
 
 ;;
 ;; Problem 5
@@ -74,8 +86,13 @@
 ;; (range n) returns the list (0 1 2 ... n-1). Assume n is a
 ;; non-negative integer.
 ;;
+(define (range-helper i n)
+  (cond [(equal? i n) '() ]
+        [else (cons i (range-helper (+ i 1) n))]
+        ))
+
 (define (range n)
-  'todo)
+  (range-helper 0 n))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
